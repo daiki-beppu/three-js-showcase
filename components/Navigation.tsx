@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from './ui/button'
 
 export type Project = {
   id: string
@@ -7,10 +9,14 @@ export type Project = {
 }
 
 const projects: Project[] = [
-  { id: '1', title: 'Project 1', imageSrc: '' },
-  { id: '2', title: 'Project 2', imageSrc: '' },
-  { id: '3', title: 'Project 3', imageSrc: '' },
+  { id: 'cube', title: 'cube', imageSrc: '/thumbnails/box.png' },
+  { id: 'sphere', title: 'Sphere', imageSrc: '/thumbnails/sphere.png' },
+  { id: 'torus', title: 'Torus', imageSrc: '/thumbnails/torus.png' },
 ]
+
+interface NavigationProps {
+  onProjectSlect: (project: Project) => void
+}
 export default function Navigation() {
   return (
     <nav className="container mx-auto px-4">
@@ -22,13 +28,14 @@ export default function Navigation() {
           <li key={project.id}>
             <Link href={`/projects/${project.id}`}>
               <div className="flex flex-col border rounded-lg relative mb-4 bg-gray-200 hover:bg-gray-300 transition-colors">
-                <img
+                <Image
                   className="aspect-video object-cover object-center"
                   src={project.imageSrc}
                   alt={`${project.title} thumbnail`}
+                  width={300}
+                  height={169}
                 />
                 <p className="p-2 bg-white">{project.title}</p>
-                <span className="absolute inset-0"> </span>
               </div>
             </Link>
           </li>

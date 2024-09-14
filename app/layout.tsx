@@ -1,3 +1,4 @@
+import Navigation from '@/components/Navigation'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -13,7 +14,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <div className="flex h-screen bg-gray-100 text-gray-800">
+          <div className="w-64 bg-white shadow-md">
+            <Navigation />
+          </div>
+
+          <main className="flex-1 overflow-y-auto">
+            <div>
+              <div>{children}</div>
+            </div>
+          </main>
+        </div>
+      </body>
     </html>
   )
 }

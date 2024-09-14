@@ -1,20 +1,8 @@
-import Canvas3D from '@/components/Canvas3D'
-import Navigation from '@/components/Navigation'
-
 export default function Home() {
   return (
-    <div className=" flex h-screen bg-gray-100 text-gray-800">
-      <nav className="w-64 bg-white shadow-md">
-        <Navigation />
-      </nav>
-
-      <main className="flex-1 flex flex-col">
-        <div>
-          <div>
-            <Canvas3D />
-          </div>
-        </div>
-      </main>
+    <div className="p-4">
+      <h2 className="text-2xl font-bold mb-4">Welcome to Three.js Project Showcase</h2>
+      <p>Select a project from the navigation to view it.</p>
     </div>
   )
 }
