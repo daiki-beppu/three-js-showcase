@@ -9,7 +9,7 @@ const Cube = lazy(() => import('./3d-objects/Cube'))
 const Shpere = lazy(() => import('./3d-objects/Sphere'))
 const Torus = lazy(() => import('./3d-objects/Torus'))
 
-type ObjectKey = 'cube' | 'sphere' | 'torus'
+type ObjectKey = string
 
 const objectMap: Record<ObjectKey, ComponentType> = {
   cube: Cube,
